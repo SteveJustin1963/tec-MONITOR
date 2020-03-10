@@ -1,16 +1,17 @@
 # tec-MONITOR
 
 1. To explore the current monitors for the TEC-1
-* MON-1
-* MON-1A
-* MON-1B
-* MON-2
-* JMON  https://github.com/jhlagado/TEC-1/tree/master/JMon
-* JMON UTIL
-* SerMon
+* https://github.com/jhlagado/TEC-1/tree/master/Mon-1
+* https://github.com/jhlagado/TEC-1/tree/master/Mon-1A
+* https://github.com/jhlagado/TEC-1/tree/master/Mon-1B
+* https://github.com/jhlagado/TEC-1/tree/master/Mon-2
+* https://github.com/jhlagado/TEC-1/tree/master/JMon
+* https://github.com/jhlagado/TEC-1/tree/master/JMon-Util
+* new https://github.com/jhlagado/SerMon (Hardy J. 2020)
 
-2. expand the comments in the .lst
-3. document with flowcharts
-4. link back to hw sw theory for z80 development
-5. See whats coming next
-* SerMon (Hardy J. 2020)
+2. n00b version .lst comments 
+3. add flowcharts
+4. link back to hw/sw z80 design practice 
+5. See whats coming next, why
+
+
