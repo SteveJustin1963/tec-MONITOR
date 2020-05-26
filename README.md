@@ -14,10 +14,10 @@
 ## repo TEC-1
 
 
-2. n00b version .lst comments 
+2. add missing comments into code and explain 
 3. add flowcharts
-4. link back to hw/sw z80 design practice 
-5. See whats coming next and what has been missed
+4. link back to hw/sw z80 design practice, review, improve 
+5. whats coming next and what has been missed
 6. why?
 
 
