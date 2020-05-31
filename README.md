@@ -14,13 +14,13 @@
 ## repo TEC-1
 
 
-2. add missing comments into code and explain  xxx
+2. add missing comments into code and explain
 3. add flowcharts
-4. link back to hw/sw z80 design practice, review, improve
-4a. convert to structured macros
-4b. convert to forth
-5. whats coming next 
-5a. what has been missed
-6. why?
+4. link back to hw/sw z80 design practice, review, improve, fix bugs eg jmon+dat
+5. convert to structured macros
+6. convert to forth
+7. whats coming next 
+8. what has been missed
+9. why?
 
  
