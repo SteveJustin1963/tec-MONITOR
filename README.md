@@ -2,22 +2,22 @@
 
 1. To explore the current monitors for the TEC-1
 
-## repo JH - (Hardy J. 2020)
-* https://github.com/jhlagado/TEC-1/tree/master/Mon-1
-* https://github.com/jhlagado/TEC-1/tree/master/Mon-1A
-* https://github.com/jhlagado/TEC-1/tree/master/Mon-1B
-* https://github.com/jhlagado/TEC-1/tree/master/Mon-2
-* https://github.com/jhlagado/TEC-1/tree/master/JMon
-* https://github.com/jhlagado/TEC-1/tree/master/JMon-Util
-* new https://github.com/jhlagado/SerMon 
+## JH
+- https://github.com/jhlagado/TEC-1/
+- Mon-1
+- Mon-1A
+- Mon-1B
+- Mon-2
+- JMon
+- JMon-Util
+- SerMon 
 
 ## SCC
-https://github.com/SteveJustin1963/tec-Southern-Cross-Computer/blob/master/SCMV1_21.PRN
+- https://github.com/SteveJustin1963/tec-Southern-Cross-Computer/blob/master/
+- SCMV1_21.PRN
+- CMON
+- 
 
-
-
-## repo TEC-1
-https://github.com/jhlagado/TEC-1
 
 ## Todo
 
