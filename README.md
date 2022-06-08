@@ -2,7 +2,7 @@
 
 1. To explore the current monitors for the TEC-1
 
-## JH
+## TEC-1 Monitors
 - https://github.com/jhlagado/TEC-1/
 - Mon-1
 - Mon-1A
@@ -12,7 +12,7 @@
 - JMon-Util
 - SerMon 
 
-## SCC
+## Southern Cross Computer (SCC) Monitors 
 - https://github.com/SteveJustin1963/tec-Southern-Cross-Computer/blob/master/
 - SCMV1_21.PRN
 - CMON
