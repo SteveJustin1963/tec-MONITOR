@@ -1,0 +1,58 @@
+// CMON - CRAIG'S MONITOR, A CUT DOWN VERSION FOR TEC-1 USING 2K EPROM
+
+// Setup depending on whether TEC-1 is defined
+if TEC-1 is defined:
+    Define DA_ACTIVE_LOW
+    Set RAM_START to 0800H, RAM_END to 0FFFH, and SYSTEM to 0F00H
+    Use TEC-1 specific I/O port addresses
+else:
+    Set RAM_START to 2000H, RAM_END to 3BFFH, and SYSTEM to 3F00H
+    Use standard I/O port addresses
+
+// Initialize Baud rate constants for serial communication
+
+// Define monitor's global variables and function table addresses
+if TEC-1 is defined:
+    Use TEC-1 specific addresses for function tables and variables
+else:
+    Use standard addresses for function tables and variables
+
+// Define variables for system, including display and interrupt vectors
+
+// Main routine setup
+Initialize hardware and check for system readiness
+Set up stack pointer and restart vectors
+Enable interrupts and set default system variables
+Enter main loop:
+    Display data and wait for key input
+    Handle key functions and loop back
+
+// Support routines for handling keyboard inputs, display updates, and memory management
+// Functions include:
+- Scan display until key press or key release
+- Clear display buffer
+- Update display with current data or address
+- Convert byte to display code
+- Handle system calls and jump tables
+- Reset and initialize system settings
+
+// Hex key handling for data entry
+if in data mode:
+    Update address or data register depending on key press
+
+// Address and mode handling routines
+Toggle data/address mode
+Increment or decrement current address based on key input
+Update display to reflect changes
+
+// Register and interrupt handling routines
+Handle single-step operations and register displays
+Manage breakpoints and system calls
+
+// Utility routines for sound and checksum calculation
+Generate tones for beep sounds
+Calculate checksum for data validation
+
+// Serialization and deserialization routines for data transmission
+Handle Intel Hex format data for serial communication
+
