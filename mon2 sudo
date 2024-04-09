@@ -1,0 +1,68 @@
+// Definitions and Equates
+RAMSTART = 2000h
+STORESP = 08E8h
+STACK_START = 08C0h
+USER_VECTORS = [VECTOR0 = 08C0h, ..., VECTOR6 = 08CCh]
+TUNEADDR = 08D6h
+CURRENT_ADDRESS = [ADDRESS0 = 08D8h, ADDRESS1 = 08D9h, ADDRESS2 = 08DAh, ADDRESS3 = 08DBh]
+MODE = 08DFh
+USER_CODE_START = 0900h
+KEYDATA = 08E0h
+
+// Initial Setup
+Set Program Counter to STARTMON
+Initialize memory vectors
+
+// Keyboard Interrupt Routine at 0066h
+On Keyboard NMI:
+  Save register state
+  Read key from key port, save to KEYDATA
+  Restore register state
+  Return from interrupt
+
+// Hexadecimal to Seven Segment Data Mapping
+Define SEVSEGDATA with values corresponding to each hex digit
+
+// Main Monitor Entry Point
+STARTMON:
+  Save current stack pointer
+  Set stack pointer to RAMSTART
+  Save system state
+  Initialize system variables
+  Loop:
+    Check for key press
+    Execute corresponding action based on key code
+
+// Keyboard Function Implementation
+// Shift+Insert - Range fill 0900 - 4000
+// Shift+Delete - Clear range 0900 - 03FF
+// Shift+Address - Jump to location in 08D2, 08D3
+If Shift+Insert pressed:
+  Fill memory from 0900 to 4000 with data
+If Shift+Delete pressed:
+  Clear memory from 0900 to 03FF
+If Shift+Address pressed:
+  Jump to memory address stored at 08D2, 08D3
+
+// Vector Calls - Redirect based on interrupt or user action
+For each vector in USER_VECTORS:
+  Jump to address stored in vector
+
+// NMI Keyboard Handling
+On NMI from Keyboard:
+  Store key press in KEYDATA
+  Resume operations
+
+// Display Handling
+For each display action:
+  Convert current address or data to display code using SEVSEGDATA
+  Update display
+
+// Utility Functions
+Play Tone or Tune based on TUNEADDR data
+Handle user input for editing memory addresses or data
+Update display and system status based on mode
+
+// Additional System Calls and Routine Mappings
+Map additional functionality such as memory editing, sound playback, etc., based on system mode and user input
+
