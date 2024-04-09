@@ -1,0 +1,64 @@
+1.  Set constants:
+    STARTRAM = 0x800
+    STARTSTACK = 0x0FF0
+    DISPLAY = 0x0FF1
+    DISPLAY2 = 0x0FF3
+    DISPLAY3 = 0x0FF4
+    DISPLAY4 = 0x0FF5
+    DISPLAY5 = 0x0FF6
+    DISPLAY6 = 0x0FF7
+    ADDRESS = 0x0FF7
+    MODE = 0x0FF9
+    KEYFLAG = 0x0FFA
+    INV_SCORE = 0x0FFA
+    INV_GUN = 0x0FFB
+    PORTKEYB = 0x00
+    PORTDIGIT = 0x01
+    PORTSPKR = 0x01
+    PORTSEGS = 0x02
+    PORTSLOW = 0x03
+    PORTFAST = 0x04
+    SLOWSEQ = 0x0800
+    FASTSEQ = 0x0B00
+    ENDOFSEQ = 0xFF
+    REPEATTEXT = 0x1E
+    ENDOFTEXT = 0x1F
+    REPEATTUNE = 0x1E
+    ENDOFTUNE = 0x1F
+    NIMMATCHES = 0x0FFA
+
+2.  Initialize:
+    Start program at STARTRAM
+    Initialize the stack pointer to STARTSTACK
+    Clear all display registers
+
+3.  Main Operations:
+    If the button pressed (PORTKEYB) corresponds to the start of a game:
+        Initialize game variables (e.g., SCORE, GUN)
+        Clear the display
+        Enter game loop:
+            Display game state
+            Update game state based on player input and game logic
+            Play sounds and music as required
+            Repeat until game over condition is met
+
+4.  Game specifics:
+    For each game (e.g., Invaders, NIM, Lunar Lander):
+        Set up game-specific variables and display
+        Handle player inputs specifically for that game
+        Update game state and display
+        Check for end conditions and handle transitions
+
+5.  Subroutines:
+    Handle display updates, input reading, sound playing, and other recurring tasks with specific subroutines:
+        ReadInput: Poll the keyboard or other input device and return the input
+        UpdateDisplay: Take input and update the display accordingly
+        PlaySound: Trigger sound output based on game events
+        HandleGameLogic: Specific to each game, to process game rules and state updates
+
+6.  Interrupt Handling:
+    Set up interrupt service routines for handling asynchronous events or actions
+
+7.  Utility Functions:
+    Convert game values to display formats
+    Manage memory and stack for routine calls and returns
