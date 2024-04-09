@@ -1,0 +1,71 @@
+// Define constants and memory addresses
+// (For display, key input, mode selection, game states, etc.)
+
+Initialize hardware and system state:
+  Set initial memory pointers
+  Set display and keyboard I/O ports
+  Load initial data into memory addresses
+
+// Main jump points for different functionalities
+Jump to the starting monitor routine:
+  Initialize system and possibly run diagnostics
+  Set default values for registers and system states
+  Clear memory or registers as needed
+
+Define game and utility subroutines:
+  Invaders Game:
+    Initialize game state (score, gun position, etc.)
+    Clear the display
+    Main game loop:
+      If invaders are present:
+        Move invaders closer or handle game logic (e.g., shooting)
+      Else:
+        Populate new invaders
+      Check for user input (shoot, move gun, etc.)
+      Update display and game state accordingly
+      If game over condition met:
+        Handle end-game (reset, show score, etc.)
+
+  NIM Game:
+    Set up initial matches and game state
+    Main game loop:
+      Display current state (matches left)
+      Get player's move
+      Adjust match count based on player's move
+      Switch turns between player and computer
+      If end condition is met (no matches left):
+        Determine winner and display result
+      Refresh display and wait for next move
+
+  Lunar Lander Game:
+    Initialize lander state (altitude, fuel, velocity)
+    Main simulation loop:
+      Adjust lander's altitude and velocity based on user input and gravity
+      Check fuel levels and reduce as necessary when thrusters used
+      Update display with current altitude, velocity, and fuel
+      If landing or crash conditions are met:
+        Play appropriate tune (win/loss)
+        Reset game or provide options to restart
+
+  Tune Playing:
+    Load tune sequence from memory
+    Play each note by sending frequencies to sound hardware
+    Handle repeats and pauses as dictated by tune data
+    Continue until tune ends or is interrupted
+
+// Display and sound utilities
+Display Management:
+  Convert numbers or game states into display format (e.g., segment code for LEDs)
+  Update display continuously based on game or system state
+  Include effects like blinking or beeping for feedback
+
+Input Handling:
+  Poll keyboard or input device regularly
+  Update game state or system settings based on input
+  Provide immediate feedback or action based on key presses
+
+Utility Functions:
+  Convert numerical data to display encoding (e.g., BCD to 7-segment)
+  Perform arithmetic operations needed for game logic (add, subtract, compare)
+  Implement delay loops for timing and synchronization between operations
+
