@@ -1,5 +1,5 @@
 ```
-TEC-1 Monitor ROM v1A Memory Map & Flow
+TEC-1B Monitor ROM v1A Memory Map & Flow
 ======================================
 
 Memory Layout:
