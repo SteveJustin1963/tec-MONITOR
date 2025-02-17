@@ -14,7 +14,7 @@ https://github.com/jhlagado/TEC-1/tree/master
 - Mon-2
 - JMon
 - JMon-Util
-- SerMon
+- SerMon  https://github.com/jhlagado/SerMon/tree/master
 - BMON
 -  
 
