@@ -1,3 +1,4 @@
+```
 System Constants:
 RAMSRT:  0800H    RAMEND: 0FFFH
 SYSTEM:  0F00H    KEYBUF: 00H
@@ -97,3 +98,4 @@ Memory Map:
 |   ADRESS:     0FDAH      |
 |   KEYDEL:     0FDCH      |
 +---------------------------+
+```
