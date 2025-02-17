@@ -1,6 +1,4 @@
-TEC Monitor 2.10 Memory Layout & Flow
-===================================
-
+```
 Memory Map:
 +---------------------------+
 | 0000H-007FH: Vector Table|
@@ -131,3 +129,6 @@ Memory Range Functions:
 | Delete (Shift-)          |
 | - Range: 0900H-03FFH    |
 +---------------------------+
+
+
+```
