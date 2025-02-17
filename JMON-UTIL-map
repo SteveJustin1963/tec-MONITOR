@@ -1,0 +1,241 @@
+```
+ 
+
+       +----------------------+
+       |  3800H: RESET VECTOR |
+       |  JP 3B00H            | --> (Entry Point)
+       +----------------------+
+                 |
+                 v
++--------------------------------+
+|  3B00H: ENTRY POINT            |
+|  - Setup Stack (SP=3FFFH)       |
+|  - Initialize Registers         |
+|  - Jump to Main Routine (3B07H) |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+|  3B07H: MAIN PROGRAM LOOP      |
+|  - Read Next Instruction       |
+|  - Decode Opcode (CALL 3A06H)  |
+|  - Call Handler (CALL 3861H)   |
+|  - LOOP: JR 3B07H              |<--+
++--------------------------------+   |
+                 |                   |
+                 v                   |
++--------------------------------+   |
+|  3861H: OPCODE JUMP TABLE      |   |
+|  - Maps Opcodes to Handlers    |   |
+|  - JP (HL) --> Correct Routine |   |
++--------------------------------+   |
+                 |                   |
+                 v                   |
++--------------------------------+   |
+|  3866H: INSTRUCTION HANDLER    |   |
+|  - Parse Instruction           |   |
+|  - Read Operands (LD BC,nn)    |   |
+|  - Convert to ASCII (CALL 3A06H) |
+|  - Send to Display (CALL 3AEEH)  |
+|  - RET --> Main Routine (3B07H)  |---+
++--------------------------------+
+                 |
+                 v
++--------------------------------------+
+|  3A06H: FORMAT & DECODE MNEMONICS   |
+|  - Convert Opcode to Mnemonics      |
+|  - RET --> Caller (3B07H or 3866H)  |
++--------------------------------------+
+                 |
+                 v
++--------------------------------------+
+|  3AEEH: DISPLAY ROUTINE              |
+|  - Send Data to 7-Segment Display    |
+|  - Format Output for Readability    |
+|  - RET --> Caller (3866H)            |
++--------------------------------------+
+
+===================================
+    INTERRUPT HANDLING & ERRORS
+===================================
+                 |
+                 v
++------------------------------------+
+|  3800H: RST 38H INTERRUPT HANDLER  |
+|  - Handles Undefined Instructions  |
+|  - JP 3C00H (Error Handler)        |
+|  3C00H: HALT / DEBUG               |
+|  - Returns to Main Routine (3B07H) |
++------------------------------------+
+
+===================================
+     SYSTEM UTILITIES & MEMORY OPS
+===================================
+                 |
+                 v
++--------------------------------+
+|  3955H: DATA MOVEMENT          |
+|  - LDIR / LDDR for Copy Ops    |
+|  - CALL 3A06H (Format Data)    |
+|  - RETURN TO MAIN ROUTINE (3B07H) |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+|  3ABC H: STACK OPERATIONS      |
+|  - PUSH / POP Stack Management |
+|  - RETURN TO MAIN LOOP (3B07H) |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+|  3960H: SYSTEM CALLS           |
+|  - External Hooks              |
+|  - RETURN TO MAIN LOOP (3B07H) |
++--------------------------------+
+
+===================================
+       HARDWARE & I/O MAPPING
+===================================
+                 |
+                 v
++--------------------------------+
+|  3B10H: PORT 5 - Speech Output |
+|  3B12H: PORT 2 - Display Data  |
+|  3B14H: PORT 1 - Display Ctrl  |
+|  - RETURN TO MAIN LOOP (3B07H) |
++--------------------------------+
+
+
+```
+
+
+```
+TEC-1 Disassembler ROM Flowchart
+================================
+
+Memory Layout:
++------------------------------------------------+
+| 3800H-3BFFH: Disassembler ROM                  |
+| 3C00H-3FFFH: Reserved Space                    |
+| 0800H-0FFFH: RAM & Variables                   |
++------------------------------------------------+
+
+============================
+1. RESET & ENTRY POINT
+============================
++------------------------------------------------+
+|  3800H: RESET VECTOR                           |
+|  3800H: JP 3B00H  --> Jump to Entry Point      |
++------------------------------------------------+
+            |
+            v
++------------------------------------------------+
+|  3B00H: ENTRY POINT                            |
+|  - Setup Stack (SP=3FFFH)                      |
+|  - Initialize Registers                        |
+|  3B03H: JP 3B07H  --> Jump to Main Routine     |
++------------------------------------------------+
+
+============================
+2. MAIN ROUTINE
+============================
+            |
+            v
++------------------------------------------------+
+|  3B07H: MAIN PROGRAM LOOP                      |
+|  - Read Next Instruction (LD A,(HL))           |
+|  - Decode Opcode (CALL 3A06H)                  |
+|  - Call Corresponding Handler (CALL 3861H)     |
+|  3B10H: JR 3B07H  --> Loop Until Done         |
++------------------------------------------------+
+
+============================
+3. OPCODE JUMP TABLE
+============================
+            |
+            v
++------------------------------------------------+
+|  3861H: OPCODE LOOKUP TABLE                    |
+|  - Maps Opcodes to Code                        |
+|  - Calls Correct Instruction Handler (JP HL)  |
++------------------------------------------------+
+
+============================
+4. INSTRUCTION DECODING
+============================
+            |
+            v
++------------------------------------------------+
+|  3866H: DISASSEMBLER CORE                      |
+|  - Parse Instruction                           |
+|  - Read Operands (LD BC,nn)                    |
+|  - Convert to ASCII (CALL 3A06H)               |
+|  - Send to Display (CALL 3AEEH)                |
+|  3872H: RET  --> Return to Main Routine        |
++------------------------------------------------+
+
+============================
+5. OPCODE TO MNEMONIC CONVERSION
+============================
+            |
+            v
++------------------------------------------------+
+|  3A06H: FORMAT & DECODE MNEMONICS              |
+|  - Convert Opcodes to Readable Mnemonics       |
+|  - Identify Instruction Type                   |
+|  3A0CH: RET  --> Return to Caller              |
++------------------------------------------------+
+
+============================
+6. DISPLAY OUTPUT HANDLER
+============================
+            |
+            v
++------------------------------------------------+
+|  3AEEH: DISPLAY ROUTINE                        |
+|  - Send ASCII Data to 7-Segment Display        |
+|  - Format Output for Readability               |
+|  3AF5H: RET  --> Return to Caller              |
++------------------------------------------------+
+
+============================
+7. INTERRUPT & ERROR HANDLING
+============================
+            |
+            v
++------------------------------------------------+
+|  3800H: RST 38H INTERRUPT HANDLER              |
+|  - Handles Undefined Instructions              |
+|  - Redirects to Error Handler (JP 3C00H)       |
+|  3C00H: SYSTEM HALT OR DEBUG ROUTINE           |
++------------------------------------------------+
+
+============================
+8. UTILITY ROUTINES
+============================
+            |
+            v
++------------------------------------------------+
+|  3955H: DATA MOVEMENT                          |
+|  - LDIR / LDDR for Copy Operations             |
+|  3ABC H: STACK OPERATIONS                      |
+|  - PUSH / POP Stack Management                 |
+|  3960H: SYSTEM CALLS                           |
+|  - External Hooks                              |
+|  3966H: RET  --> Return to Caller              |
++------------------------------------------------+
+
+============================
+9. I/O & HARDWARE MAPPING
+============================
+            |
+            v
++------------------------------------------------+
+|  3B10H: PORT 5 - Speech Output (SP0256)       |
+|  3B12H: PORT 2 - Display Data                 |
+|  3B14H: PORT 1 - Display Control              |
++------------------------------------------------+
+
+```
+
