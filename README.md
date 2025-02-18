@@ -1,4 +1,4 @@
-https://github.com/jhlagado/TEC-1/tree/master
+
 
 
 
@@ -6,7 +6,7 @@ https://github.com/jhlagado/TEC-1/tree/master
 
 1. To explore the current monitors for the TEC-1
 
-## TEC-1 Monitors
+## TEC-1 Monitors 
 - https://github.com/jhlagado/TEC-1/
 - Mon-1
 - Mon-1A
@@ -14,7 +14,7 @@ https://github.com/jhlagado/TEC-1/tree/master
 - Mon-2
 - JMon
 - JMon-Util
-- SerMon aka `Z80 Forth STC `  https://github.com/jhlagado/SerMon/tree/master
+- SerMon aka `Z80 Forth STC `  https://github.com/jhlagado/SerMon/
 - BMON
 -  
 
