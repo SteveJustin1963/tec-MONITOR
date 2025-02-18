@@ -1,5 +1,44 @@
 [fc.pdf](https://github.com/user-attachments/files/18838493/fc.pdf)
 
+Here are some additional insights about the SMON (Simple Monitor) code:
+
+
+# Technical Highlights:
+
+1. User Interface
+   - Uses seven-segment LED display for address/data output
+   - Supports direct hexadecimal input
+   - Minimal key-based interaction model
+   - Provides immediate feedback through display and tones
+
+2. Memory Management
+   - Direct memory viewing and modification
+   - Two-mode operation (Address and Data modes)
+   - Single-byte memory editing
+   - No complex memory protection mechanisms
+
+3. Input Handling
+   - Uses non-maskable interrupt (NMI) for key detection
+   - Clever bit manipulation for mode switching
+   - Supports both numeric and hexadecimal input
+
+# Unique Implementation Details:
+1. Display Conversion
+   - Custom hex-to-seven-segment lookup table (0x00D3)
+   - Efficient conversion routine with minimal code
+   - Supports both address and data display
+
+2. Tone Generation
+   - Simple audio feedback mechanism
+   - Uses port manipulation for tone creation
+   - Provides reset and key press sounds
+
+3. Interrupt Handling
+   - Lightweight NMI handler
+   - Stores key press in interrupt register
+   - Minimal overhead interrupt management
+
+
 
 # Key points about the addresses:
 - Program starts at 0x0000
