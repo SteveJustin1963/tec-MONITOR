@@ -20,7 +20,8 @@ We’ll bash it and call it possessed!
 - JMon-Util
 - SerMon aka `Z80 Forth STC `  https://github.com/jhlagado/SerMon/
 - BMON
--  
+- SMON   https://github.com/bchiha/TEC-1D-Stuff/blob/master/code/utilities/smon.lst
+- 
 
 ## Southern Cross Computer (SCC) Monitors 
 - https://github.com/SteveJustin1963/tec-Southern-Cross-Computer/blob/master/
