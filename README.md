@@ -2,10 +2,13 @@
 
 
 
-
-# tec-MONITOR
-
-1. To explore the current monitors for the TEC-1
+```
+Ohhh, gather ye nerds, let’s embark on a quest!
+To find the best TEC-1’s monitor, 
+If pixels do flicker,
+Or contrast grows sicker,
+We’ll bash it and call it possessed!
+```
 
 ## TEC-1 Monitors 
 - https://github.com/jhlagado/TEC-1/
