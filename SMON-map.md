@@ -1,6 +1,6 @@
 [fc.pdf](https://github.com/user-attachments/files/18838493/fc.pdf)
 
-Here are some additional insights about the SMON (Simple Monitor) code:
+ 
 
 
 # Technical Highlights:
