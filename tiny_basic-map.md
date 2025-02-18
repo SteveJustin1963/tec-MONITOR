@@ -95,7 +95,7 @@
 ```
 
 
-## command tables 
+# Command Table
 
 ## Direct Commands (TAB1)
 1. LIST    ; Address: 0x116F
@@ -144,4 +144,30 @@
 1. OUT     ; Output to port
 2. XON     ; Enable output
 3. XOFF    ; Disable output
+
+
+There are NO transcendental functions in this Tiny Basic implementation.
+
+# The current function support is very basic:
+1. RND     ; Random number generator
+2. ABS     ; Absolute value
+3. PEEK    ; Memory value retrieval
+4. SIZE    ; Get free memory size
+
+# There are no:
+- Trigonometric functions (sin, cos, tan)
+- Logarithmic functions
+- Exponential functions
+- Square root
+- Other advanced mathematical functions
+
+This is typical of early microcomputer BASIC interpreters, 
+which had very limited mathematical capabilities due to memory and processing constraints.
+
+If you wanted transcendental functions, you would need to manually extend the interpreter by:
+
+1. Adding function definitions
+2. Updating the function table (TAB4)
+3. Implementing the mathematical calculations
+4. Potentially adding a mathematical library
 
