@@ -21,7 +21,7 @@ https://github.com/jhlagado/TEC-1/tree/master
 ## Southern Cross Computer (SCC) Monitors 
 - https://github.com/SteveJustin1963/tec-Southern-Cross-Computer/blob/master/
 - SCMV1_21.PRN
-- CMON
+- CMON (both SBC's)
 - 
 
 
