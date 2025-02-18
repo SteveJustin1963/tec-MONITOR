@@ -127,7 +127,7 @@
 
 ## Comparison Operators (TAB8)
 1. >=      ; Greater than or equal
-2. #       ; Not equal
+2. `#`     ; Not equal
 3. >       ; Greater than
 4. =       ; Equal to
 5. <=      ; Less than or equal
