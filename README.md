@@ -4,7 +4,7 @@
 
 ```
 Ohhh, gather ye nerds, let’s embark on a quest!
-To find the best TEC-1’s monitor, 
+To find the best Monitor, 
 If pixels do flicker,
 Or contrast grows sicker,
 We’ll bash it and call it possessed!
