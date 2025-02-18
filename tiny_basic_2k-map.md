@@ -2,7 +2,7 @@
 
 
 ```
-I'll extract all the commands from the TAB1, TAB2, TAB4, TAB5, TAB6, and TAB8 tables in the source code.
+ 
 
 **Direct Commands (TAB1):**
 1. LIST
